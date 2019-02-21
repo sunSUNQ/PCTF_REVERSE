@@ -80,17 +80,17 @@ public class MainActivity
 
 - 这块是不能更改代码的，因此找到对应函数的smail文件，进行逻辑修改，有很多种方法，一种是在判断**“已爬楼层是否大于要爬的楼层”**，这里修改成**小于**。或者是将**要爬的楼层更改为0**，或者是**将flag按键一直设置为可点击状态**。
   
-<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/clickable.png" width="1000" height="100" alt="图片加载失败"/>
+<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/clickable.png" width="600" height="80" alt="图片加载失败"/>
 
 
 - 我使用的是第三种方法。在smail文件中找到**setClickable**函数的位置。正好有**两个**。判断**v3和v5**应该是**true和false**状态，而且**v3恒为true**，因此就是将v**5的位置改成0x1**，就可以实现目的。
 
-<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/v5.png" width="1000" height="100" alt="图片加载失败"/><br>
-<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/v3.png" width="1000" height="100" alt="图片加载失败"/>
+<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/v5.png" width="800" height="100" alt="图片加载失败"/><br>
+<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/v3.png" width="1000" height="150" alt="图片加载失败"/>
 <br>
 - 向上找到**v5的定义位置，将0x0，更改为0x1**。
 
-<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/change.png" width="800" height="120" alt="图片加载失败"/><br>
+<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/change.png" width="800" height="150" alt="图片加载失败"/><br>
 
 - 需要将修改后的文件，整体**进行编译生成apk文件**，一开始没有编译成功，找了一下原因，有大神说需要**将unknow文件夹删除**掉，里边有之前的签名信息。因此尝试将其删除然后重新编译。用的是**apktool box工具**。
 
