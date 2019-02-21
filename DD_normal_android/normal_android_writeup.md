@@ -48,10 +48,10 @@
 
   - 看到应该是**stringFromJNI函数**中存在flag，然后发现是native类型。上边导入库中有**hello-libs**这块也应该注意一下。进行反编译获取原工程文件。看到正好存在一个**libhello**。
 
-  ![libhello](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/normal_android/libhello.png)
+  ![libhello](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/DD_normal_android/libhello.png)
 
 - 用**32bits的IDA**打开。用hex解码发现flag。。。。说实话我是震惊的。
 
-![flag](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/normal_android/flag.png)
+![flag](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/DD_normal_android/flag.png)
 
 - flag ： DDCTF-397a90a3267641658bbc975326700f4b@didichuxing.com
