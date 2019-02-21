@@ -4,13 +4,77 @@
 
 - **apk**文件。 **先拖到模拟器**中看一下效果，我用的**夜神模拟器**。百度搜就可以去官网下载。
 
-![origin](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/origin.png)
+<img src="https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/origin.png" width="400" height="300" alt="图片加载失败"/>
 
 - 点一次**“爬一层楼”**按键就会加一，当达到196608的时候就可以看FLAG，作为一个程序员当然要尝试破解一下获取flag。
 
 - apk文件，用**androidkiller**打开然后反编译一下。
 
-![java_code](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/java_code.png)
+"""
+package com.ctf.test.ctf_100;
+
+import android.os.Bundle;
+import android.os.Debug;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import java.util.Random;
+
+public class MainActivity
+  extends AppCompatActivity
+{
+  public int has_gone_int;
+  public int to_reach_int;
+  
+  static
+  {
+    if (!Debug.isDebuggerConnected()) {
+      System.loadLibrary("ctf");
+    }
+  }
+  
+  public void Btn_up_onclick(View paramView)
+  {
+    this.has_gone_int += 1;
+    paramView = "" + this.has_gone_int;
+    ((TextView)findViewById(2131492948)).setText(paramView);
+    if (this.to_reach_int <= this.has_gone_int) {
+      ((Button)findViewById(2131492950)).setClickable(true);
+    }
+  }
+  
+  public void btn2_onclick(View paramView)
+  {
+    ((TextView)findViewById(2131492951)).setText("{Flag:" + get_flag(this.to_reach_int) + "}");
+  }
+  
+  public native String get_flag(int paramInt);
+  
+  protected void onCreate(Bundle paramBundle)
+  {
+    super.onCreate(paramBundle);
+    setContentView(2130968601);
+    ((Button)findViewById(2131492950)).setClickable(false);
+    this.has_gone_int = 0;
+    paramBundle = new Random();
+    for (this.to_reach_int = paramBundle.nextInt();; this.to_reach_int = paramBundle.nextInt())
+    {
+      if (this.to_reach_int < 0) {
+        this.to_reach_int *= -1;
+      }
+      if (5 < this.to_reach_int)
+      {
+        this.to_reach_int %= 32;
+        this.to_reach_int *= 16384;
+        ((TextView)findViewById(2131492947)).setText("" + this.to_reach_int);
+        ((TextView)findViewById(2131492951)).setText("");
+        return;
+      }
+    }
+  }
+}
+"""
 
 - 很容易看到代码逻辑，就是点击就会增加，当点击到一定数目时，提示信息。
 
@@ -36,9 +100,9 @@
 
 ![apktool_box](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/apktool_box.png)
 
-- 然后就是最后的部分了，将编译好的**apk文件****放到夜神模拟器**中测试一下子。
+- 然后就是最后的部分了，将编译好的**apk文件放到夜神模拟器**中测试一下子。
 
 ![flag](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/climb_a_ladder/image/flag.png)
 
-- 拿到了flag，**=={flag:268796A5E68A25A1}, 最后提交的时候注意一下格式要求，16位大写MD5。==**
+- 拿到了flag，**{flag:268796A5E68A25A1}, 最后提交的时候注意一下格式要求，16位大写MD5。**
 
