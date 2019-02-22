@@ -26,7 +26,7 @@
 
 - 这里可以获得相比较的操作数，也是14个。
 - **0x46, 0x17, 0x1c, 0x1b        0x30, 0x20, 0xfd. 0xf4       0x7e, 0x8e, 0x0c, 0xb7         0x78        0xde**
-- 但是此处的数据是反过来的，右键选择 **数据窗口跟随** 就可以看到。更正数据顺序。
+- 但是此处的数据是小端的，就是从右向左的顺序，右键选择 **数据窗口跟随** 就可以看到。更正数据顺序。
 
 ![data](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/software_password_1/data.png)
 
