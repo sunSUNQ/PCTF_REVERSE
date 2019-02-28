@@ -149,4 +149,4 @@ print flag
 
 - 获得的flag是 **Qv49CmZB2Df4jB-**  放到android里边看看是正确的key。
 
-![1551353717671](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1551353717671.png)
+![1551353717671](https://github.com/sunSUNQ/PCTF_REVERSE/blob/master/findpass/findpass.png)
