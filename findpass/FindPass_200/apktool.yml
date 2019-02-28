@@ -1,0 +1,31 @@
+version: 2.0.3-SNAPSHOT-master-5f5f50f
+apkFileName: FindPass_200.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '17'
+  targetSdkVersion: '17'
+packageInfo:
+  forced-package-id: '127'
+versionInfo:
+  versionCode: '1'
+  versionName: '1.0'
+sharedLibrary: false
+unknownFiles:
+  META-INF/MANIFEST.MF: '8'
+doNotCompress:
+- assets/src.jpg
+- res/drawable-hdpi/background.jpg
+- res/drawable-hdpi/ic_launcher.png
+- res/drawable-mdpi/ic_launcher.png
+- res/drawable-xhdpi/ic_launcher.png
+- res/drawable-xxhdpi/ic_launcher.png
+DecodeFileMaps:
+  res/drawable-mdpi/ic_launcher.png: res/drawable-mdpi-v4/ic_launcher.png
+  res/drawable-xxhdpi/ic_launcher.png: res/drawable-xxhdpi-v4/ic_launcher.png
+  res/drawable-hdpi/ic_launcher.png: res/drawable-hdpi-v4/ic_launcher.png
+  res/drawable-hdpi/background.jpg: res/drawable-hdpi-v4/background.jpg
+  res/drawable-xhdpi/ic_launcher.png: res/drawable-xhdpi-v4/ic_launcher.png
+DexMaps: {}
