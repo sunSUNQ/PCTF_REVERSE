@@ -6,29 +6,29 @@
 
 这里我们想要分析exe就需要先转换成jar然后进行逆向就好分析了。
 
-![1559394997332](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559394997332.png)
+![1559394997332](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559394997332.png)
 
-![1559395006034](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559395006034.png)
+![1559395006034](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559395006034.png)
 
 这里是同学提示的，在网上找了一下exe4j生成exe的执行过程，其实就是先将exe转换回jar，然后加入java环境等等信息，然后进行执行，那么我们只要找到转换成的jar的临时文件路径就可以了。
 
-![1559395285136](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559395285136.png)
+![1559395285136](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559395285136.png)
 
 然后使用APKTool进行jar包的打开。
 
-![1559395394287](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559395394287.png)
+![1559395394287](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559395394287.png)
 
 然后可以直接获得源码。里边的主要加密就是先通过秘钥进行DES加密，然后进行BASE64的编码转换，和sercetCode进行对比，如果相同就返回true。
 
 但是这里的秘钥是六位的，DES加密秘钥需要8位，后两位需要进行爆破猜解。
 
-![1559395516923](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559395516923.png)
+![1559395516923](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559395516923.png)
 
 但是这里的flag我们还不清楚，需要找一下源码看flag是什么。
 
-![1559395641512](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559395641512.png)
+![1559395641512](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559395641512.png)
 
-![1559395656773](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559395656773.png)
+![1559395656773](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559395656773.png)
 
 这里就说明了flag的格式应该为flag{xxxxxxxx}并且是Try this CTF的子串。
 
@@ -119,4 +119,4 @@ flag{this CTF}
 
 跑出来几组数据，然后进行测试，flag正确然后进行提交。
 
-![1559394741764](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559394741764.png)
+![1559394741764](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559394741764.png)
