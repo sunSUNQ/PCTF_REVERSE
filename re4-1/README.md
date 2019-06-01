@@ -2,7 +2,7 @@
 
 拿到了是一个叫Caesar的文件，用file了一下，发现是32位的，就用32位的ida打开一下。F5大法好哇。
 
-![1559396758437](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559396758437.png)
+![1559396758437](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559396758437.png)
 
 然后可以直接看到加密的算法还有关键性的字符串等等操作。
 
@@ -35,4 +35,4 @@ print "flag{c0ngr4tu14ti0ns!}"
 
 最后的flag试了很多次，发现最后一位不是l是叹号第二位也有一些问题。。。。。因为之前把一些奇怪的字符都屏蔽掉了，因此这里出了差错。问了几个都说这种需要靠经验。。。
 
-![1559397157803](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1559397157803.png)
+![1559397157803](https://github.com/sunSUNQ/PCTF_REVERSE/raw/master/image/1559397157803.png)
